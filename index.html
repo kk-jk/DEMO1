@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>我的第一个页面</title>
+    <style>
+        body{
+            background-color: #eee;
+        }
+        *{
+            /* 改变盒子模型 */
+            box-sizing: border-box;
+            /* 消除盒子的边距 */
+            margin: 0;
+            padding: 0;
+        }
+        @keyframes move{
+            0%{
+                transform: rotateZ(0deg);
+            }
+            100%{
+                transform: rotateZ(360deg);
+            }
+        }
+        #八卦{
+            /* border: 1px solid red; */
+            width: 400px;
+            height: 400px;
+            /* 一般超过宽度一半就按一半来算，也可以直接写50% */
+            border-radius: 50%;
+            position: relative;
+            /* 当你去掉子元素的边框时会发现有一些红色的边，要超出隐藏 */
+            overflow: hidden;
+            animation: move 2s linear infinite;
+            box-shadow: 0px 0px 23px 10px rgba(0,0,0,0.75);
+        }
+        @media (max-width: 500px){
+            /* 媒体查询 括号内不用； */
+            #八卦{
+                width: 200px;
+                height: 200px;
+            }
+        }
+        #八卦 div:first-child{
+            /* border: 10px solid green; */
+            width: 50%;
+            height: 100%;
+            position: absolute;
+            left: 0;
+            background-color: black;
+        }
+        /* 宽高为百分比的不用加媒体查询 */
+
+        /* 可以>也可以空格 */
+        #八卦>div:nth-child(2){
+            /* border: 10px solid blue; */
+            width: 50%;
+            height: 100%;
+            position: absolute;
+            right: 0;
+            background-color: white;
+        }
+        #八卦 div:nth-child(3){
+            /* border: 10px solid blue; */
+            width: 200px;
+            height: 200px;
+            position: absolute;
+            left: 50%;
+            margin-left: -100px;
+            border-radius: 50%;
+            background-color: black;
+        }
+        @media (max-width: 500px){
+            #八卦 div:nth-child(3){
+            /* border: 10px solid blue; */
+            width: 100px;
+            height: 100px;
+            position: absolute;
+            left: 50%;
+            margin-left: -50px;
+            border-radius: 50%;
+            background-color: black;
+        }
+        }
+        #八卦 div:nth-child(4){
+            /* border: 10px solid blue; */
+            width: 200px;
+            height: 200px;
+            position: absolute;
+            left: 50%;
+            margin-left: -100px;
+            bottom: 0;
+            border-radius: 50%;
+            background-color: white;
+        }
+        @media (max-width: 500px){
+            #八卦 div:nth-child(4){
+            /* border: 10px solid blue; */
+            width: 100px;
+            height: 100px;
+            position: absolute;
+            left: 50%;
+            margin-left: -50px;
+            bottom: 0;
+            border-radius: 50%;
+            background-color: white;
+        }
+        }
+        #八卦 div:nth-child(5){
+            /* border: 10px solid blue; */
+            width: 50px;
+            height: 50px;
+            position: absolute;
+            left: 50%;
+            top: 75px;
+            margin-left: -25px;
+            border-radius: 50%;
+            background-color: white;
+        }
+        @media (max-width: 500px){
+            #八卦 div:nth-child(5){
+            /* border: 10px solid blue; */
+            width: 25px;
+            height: 25px;
+            position: absolute;
+            left: 50%;
+            top: 37.5px;
+            margin-left: -12.5px;
+            border-radius: 50%;
+            background-color: white;
+        }
+        }
+        #八卦 div:nth-child(6){
+            /* border: 10px solid blue; */
+            width: 50px;
+            height: 50px;
+            position: absolute;
+            left: 50%;
+            bottom: 75px;
+            margin-left: -25px;
+            border-radius: 50%;
+            background-color: black;
+        }
+        @media (max-width: 500px){
+            #八卦 div:nth-child(6){
+            /* border: 10px solid blue; */
+            width: 25px;
+            height: 25px;
+            position: absolute;
+            left: 50%;
+            bottom: 37.5px;
+            margin-left: -12.5px;
+            border-radius: 50%;
+            background-color: black;
+        }
+        }
+        #wrapper{
+            /* border: 1px solid red; */
+            /* viewpoint height 设置div高度跟屏幕一样，宽度不用设置，自适应 */
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+        #描述{
+            /* margin-top: 10px; */
+            /* 1em代表字母的高度 */
+            margin-top: 1em;
+        }
+    </style>
+</head>
+<body>
+    <div id="wrapper">
+        <div id="八卦">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <div id="描述">
+            道可道，非常道
+        </div>
+    </div>
+    
+</body>
+</html>
